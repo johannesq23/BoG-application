@@ -1,10 +1,29 @@
 /* Your Styles Here */
+
 body {
     background-color: #121212;
     width: 100%;
     height: 100%;
     overflow: hidden;
     
+}
+
+:root {
+    --gradient: linear-gradient(
+        45deg,
+        #326389, 
+        #2d5a83, 
+        #28527d, 
+        #254976, 
+        #22416f, 
+        #153c65, 
+        #09375a, 
+        #003250, 
+        #002c3d, 
+        #002428, 
+        #001c15, 
+        #001200
+    )
 }
 
 .waves{
@@ -20,15 +39,15 @@ body {
 .box {
     position:relative;
     top:300px;
-    background-image: linear-gradient(#2d545e, #001220);
+    /*background-image: var(--gradient);*/
     width: 400px;
-    height: 200px;
+    height: 300px;
     margin:auto;
-    border-radius: 30px;
     transition: .5s;
     display: flex;
     justify-content: center;
 }
+
 .box:hover{
     height: 600px;
     top: 200px;
@@ -50,7 +69,6 @@ body {
     position: relative;
     margin:auto;
     top: -115px;
-    z-index: 1;
     transition: .5s;
     
 }
@@ -62,7 +80,9 @@ body {
 }
 
 .circle {
-    background-image: linear-gradient(to bottom right, orange, red);
+    background-image: linear-gradient(to right bottom, #ff0000, #ff3700, #ff5000, #ff6400, #ff7500, #ff6119, #ff4b29, #ff3036, #ff005c, #f2008d, #bf00c7, #0005ff);
+    background-size: 500%;
+    animation: circle-animation 4s infinite alternate;
     height: 210px;
     width: 210px;
     border-radius: 50%;
@@ -70,7 +90,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     top: -120px;
-    transition: .5s;
+    transition: .6s;
 }
 
 .box:hover .circle{
@@ -79,12 +99,20 @@ body {
     top: -140px;
 }
 
+@keyframes circle-animation{
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+
 .name {
     position: relative;
     color: white;
     font-size: 30px;
     font-family: Arial;
-    transition: .5s;
     top: -20px;
     width: 220px;
     margin-left: auto;
@@ -99,11 +127,11 @@ body {
     height: 220px;
     text-align: center;
     align-items: center;
-    background-image: linear-gradient(#2d545e, #001220);
+    background-image: var(--gradient);
     padding: 10px;
     border-radius: 50%;
-    transition: .5s;
     margin: 2%;
+    border: 3px solid orange;
 }
 .textbox:nth-child(3){
     margin-left: auto;
@@ -130,8 +158,7 @@ body {
     position: absolute;
     display: block;
     overflow: hidden;
-    /*background-color: white;*/
-    transition: .5s;
+    transition: .6s;
 }
 
 .box:hover .content{
